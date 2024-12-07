@@ -1,5 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Root from "../layouts/Root.astro";
 ---
-<p>Test</p>
+<Root title="test">
+<main class="flex flex-col w-full items-center mt-8">
+    <div>
+      <img class="bg-zinc-600 w-72 rounded-3xl mb-12" src="/profile.webp" />
+      <h1 class="text-4xl font-semibold text-zinc-300 mb-4">Simon Kovtyk</h1>
+      <p class="text-2xl font-regular text-zinc-400">Software-Developer passionated in CI/CD, Architecture and Dev-Environments</p>
+    </div>
+  </main>
+</Root>
