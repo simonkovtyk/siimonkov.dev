@@ -9,6 +9,7 @@
 
   body {
     user-select: none;
+    overflow-x: hidden;
   }
 
   @font-face {

@@ -1,0 +1,9 @@
+{
+  "manifest_version": 3,
+  "name": "Simon Kovtyk | Portfolio",
+  "short_name": "Simon Kovtyk",
+  "author": "Simon Kovtyk",
+  "permissions": [
+    "clipboard-write"
+  ]
+}

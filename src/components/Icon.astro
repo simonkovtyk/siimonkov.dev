@@ -1,0 +1,30 @@
+---
+import GitHub from "./icons/GitHub.astro";
+import NPM from "./icons/NPM.astro";
+import TwitterX from "./icons/TwitterX.astro";
+import Copy from "./icons/Copy.astro";
+
+interface Props {
+  name: "github" | "npm" | "twitter-x" | "copy";
+  width: number;
+  height: number;
+}
+
+const { name, width, height } = Astro.props;
+---
+{
+  name === "github" &&
+  <GitHub width={width} height={height} />
+}
+{
+  name === "npm" &&
+  <NPM width={width} height={height} />
+}
+{
+  name === "twitter-x" &&
+  <TwitterX width={width} height={height} />
+}
+{
+  name === "copy" &&
+  <Copy width={width} height={height} />
+}
