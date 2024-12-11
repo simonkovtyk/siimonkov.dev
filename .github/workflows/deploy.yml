@@ -31,3 +31,4 @@ jobs:
           strip_components: 1
           source: "dist/"
           target: "/var/www"
+          rm: true
