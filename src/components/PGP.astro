@@ -1,0 +1,102 @@
+---
+import Button from "./Button.astro";
+import Icon from "./Icon.astro";
+---
+<script>
+  const copyPGPButton: HTMLButtonElement | null = document.querySelector(".pgp-copy-button");
+  const copyPGPTextarea: HTMLTextAreaElement | null = document.querySelector(".pgp-copy-text");
+
+  const handleFallbackCopy = (): void => {
+    if (copyPGPTextarea === null)
+      return;
+
+    try {
+      copyPGPTextarea.select();
+      copyPGPTextarea.setSelectionRange(0, 999999);
+      // @ts-ignore
+      document.execCommand("copy");
+    } catch {}
+  }
+
+  copyPGPButton?.addEventListener("click", async (): Promise<void> => {
+    if (!("clipboard" in navigator)) {
+      handleFallbackCopy();
+      return;
+    }
+
+    let clipboardPermissions: PermissionStatus | undefined;
+
+    try {
+      // @ts-ignore
+      clipboardPermissions = await navigator.permissions.query({ name: "clipboard-write" });
+    } catch {
+      handleFallbackCopy();
+    }
+
+    if (clipboardPermissions?.state === "denied" || copyPGPTextarea === null) {
+      handleFallbackCopy();
+      return;
+    }
+
+    navigator.clipboard.writeText(copyPGPTextarea.value);
+  });
+</script>
+<section class="flex flex-col items-start justify-start mt-24">
+  <h2 class="text-2xl font-semibold text-zinc-300 mb-4">Public PGP Key</h2>
+  <textarea readonly class="text-sm outline-none w-full h-72 text-zinc-400 border border-zinc-700 bg-[unset] p-4 rounded-xl text-wrap break-all select-text resize-none pgp-copy-text mb-4">
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+=HR9G
+-----END PGP PUBLIC KEY BLOCK-----</textarea>
+    <Button type="button" className="pgp-copy-button">
+      <Icon name="copy" width={18} height={18} />
+      <p>Copy</p>
+    </Button>
+</section>

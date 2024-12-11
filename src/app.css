@@ -5,11 +5,14 @@
 @layer base {
   :root {
     font-family: "Inter", system-ui, sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: #3f3f46;
+    scroll-behavior: smooth;
   }
 
-  body {
-    user-select: none;
-    overflow-x: hidden;
+  textarea {
+    scrollbar-width: thin;
+    scrollbar-color: #3f3f46;
   }
 
   @font-face {

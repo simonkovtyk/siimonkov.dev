@@ -1,76 +1,17 @@
 ---
 import Root from "../layouts/Root.astro";
-import Icon from "../components/Icon.astro";
-import Button from "../components/Button.astro";
+import Header from "../components/Header.astro";
+import PGP from "../components/PGP.astro";
 ---
-<Root title="test">
-<main class="w-full flex flex-col items-center mt-[max(2rem,5vw)] px-8">
+<Root title="Portfolio">
+<main class="w-full flex flex-col items-center my-[max(2rem,5vw)] px-8">
   <div class="max-w-[1000px]">
-    <section class="flex flex-col items-start justify-start">
-      <img alt="Picture of Simon Kovtyk" class="bg-zinc-700 w-72 rounded-3xl mb-12" src="/profile.webp" />
-      <h1 class="text-4xl font-semibold text-zinc-300 mb-4">Simon Kovtyk</h1>
-      <p class="text-2xl font-regular text-zinc-400">Software-Developer passionated in CI/CD, Architecture and Dev-Environments</p>
-      <div class="flex items-center gap-4 mt-8">
-        <Button type="link" link="https://github.com/simonkovtyk" target="_blank">
-          <Icon name="github" width={24} height={24} />
-        </Button>
-        <Button type="link" link="https://www.npmjs.com/~simonkov" target="_blank">
-          <Icon name="npm" width={24} height={24} />
-        </Button>
-        <Button type="link" link="https://x.com/simonkovtyk" target="_blank">
-          <Icon name="twitter-x" width={24} height={24} />
-        </Button>
-        <div class="w-24 h-[1px] bg-zinc-600 rounded-full"></div>
-        <a class="text-zinc-400 text-xl hover:text-zinc-500 transition-colors" href="mailto:simon@kovtyk.com">simon@kovtyk.com</a>
-      </div>
-    </section>
-    <section class="flex flex-col items-start justify-start mt-24">
-      <div class="flex gap-4 items-center mb-4">
-        <h2 class="text-2xl font-semibold text-zinc-300">Public PGP Key</h2>
-        <Button type="button" className="pgp-copy-button">
-          <Icon name="copy" width={24} height={24} />
-        </Button>
-      </div>
-      <textarea class="text-sm text-zinc-400 border border-zinc-700 p-4 rounded-xl text-wrap break-all select-text pgp-copy-text">
-        -----BEGIN PGP PUBLIC KEY BLOCK-----<br/>
-        <br/>
-        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HR9G<br/>
-        -----END PGP PUBLIC KEY BLOCK-----
-      </textarea>
-    </section>
+    <Header />
+    <PGP />
   </div>
 </main>
 </Root>
 <script>
-  const copyPGPButton: HTMLButtonElement | null = document.querySelector(".pgp-copy-button");
-  const copyPGPText: HTMLParagraphElement | null = document.querySelector(".pgp-copy-text");
-
-  const handleFallbackCopy = (): void => {
-    copyPGPText.select();
-    document.execCommand("copy");
-  }
-
-  copyPGPButton?.addEventListener("click", async (): Promise<void> => {
-    if ("clipboard" in navigator) {
-      let clipboardPermissions: PermissionStatus | undefined;
-
-      try {
-        clipboardPermissions = await navigator.permissions.query({ name: "clipboard-write" });
-      } catch {
-
-      }
-
-      if (clipboardPermissions?.state === "denied")
-        return;
-
-      if (copyPGPText === null)
-        return;
-
-      navigator.clipboard.writeText(copyPGPText.innerText);
-      return;
-    }
-
-
-  });
+  
 </script>
 

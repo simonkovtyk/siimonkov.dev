@@ -9,12 +9,12 @@ interface Props {
 const { type, link, target, className } = Astro.props;
 ---
 { type === "button" &&
-<button class:list={["text-zinc-400 hover:text-zinc-500 transition-colors", className ]}>
+  <button class:list={["flex justify-center items-center gap-2 p-2 bg-zinc-300 rounded-xl text-zinc-800 hover:text-zinc-600 transition-colors", className ]}>
     <slot />
   </button>
 }
 { type === "link" &&
-  <a href={link} target={target} class="flex justify-center items-center p-2 bg-zinc-300 rounded-xl text-zinc-800 hover:bg-zinc-400 transition-colors">
+  <a href={link} target={target} class="flex justify-center items-center p-2 bg-zinc-300 rounded-xl text-zinc-800 hover:text-zinc-600 transition-colors">
     <slot />
   </a>
 }
