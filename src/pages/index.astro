@@ -3,15 +3,14 @@ import Root from "../layouts/Root.astro";
 import Header from "../components/Header.astro";
 import PGP from "../components/PGP.astro";
 ---
-<Root title="Portfolio">
-<main class="w-full flex flex-col items-center my-[max(2rem,5vw)] px-8">
+<Root>
+<title slot="head">Simon Kovtyk</title>
+<meta slot="head" name="description" content="Explore my portfolio as a Software Developer passionate about CI/CD, Architecture, and Development Environments 💻. Discover my work and projects." />
+<main class="w-full flex flex-col items-center my-[max(2rem,5vw)] px-8" slot="body">
   <div class="max-w-[1000px]">
     <Header />
     <PGP />
   </div>
 </main>
 </Root>
-<script>
-  
-</script>
 

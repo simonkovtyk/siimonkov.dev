@@ -4,9 +4,10 @@ interface Props {
   link?: string;
   target?: string;
   className?: string;
+  ariaLabel?: string;
 }
 
-const { type, link, target, className } = Astro.props;
+const { type, link, target, className, ariaLabel } = Astro.props;
 ---
 { type === "button" &&
   <button class:list={["flex justify-center items-center gap-2 p-2 bg-zinc-300 rounded-xl text-zinc-800 hover:text-zinc-600 transition-colors", className ]}>
@@ -14,7 +15,7 @@ const { type, link, target, className } = Astro.props;
   </button>
 }
 { type === "link" &&
-  <a href={link} target={target} class="flex justify-center items-center p-2 bg-zinc-300 rounded-xl text-zinc-800 hover:text-zinc-600 transition-colors">
+  <a aria-label={ariaLabel} href={link} target={target} class="flex justify-center items-center p-2 bg-zinc-300 rounded-xl text-zinc-800 hover:text-zinc-600 transition-colors">
     <slot />
   </a>
 }

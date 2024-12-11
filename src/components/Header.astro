@@ -3,17 +3,17 @@ import Button from "./Button.astro";
 import Icon from "./Icon.astro";
 ---
 <section class="flex flex-col items-start justify-start">
-  <img alt="Picture of Simon Kovtyk" class="bg-zinc-700 w-72 rounded-3xl mb-12" src="/profile.webp" />
+  <img alt="Picture of Simon Kovtyk" class="bg-zinc-700 w-72 rounded-3xl mb-12" width="512" height="512" src="/profile.webp" />
   <h1 class="text-4xl font-semibold text-zinc-300 mb-4">Simon Kovtyk</h1>
   <p class="text-2xl font-regular text-zinc-400">Software-Developer passionated in CI/CD, Architecture and Dev-Environments</p>
   <div class="flex flex-wrap items-center gap-4 mt-8">
-    <Button type="link" link="https://github.com/simonkovtyk" target="_blank">
+    <Button ariaLabel="Visit my GitHub profile" type="link" link="https://github.com/simonkovtyk" target="_blank">
       <Icon name="github" width={24} height={24} />
     </Button>
-    <Button type="link" link="https://www.npmjs.com/~simonkov" target="_blank">
+    <Button ariaLabel="Visit my npm profile" type="link" link="https://www.npmjs.com/~simonkov" target="_blank">
       <Icon name="npm" width={24} height={24} />
     </Button>
-    <Button type="link" link="https://x.com/simonkovtyk" target="_blank">
+    <Button ariaLabel="Visit my X profile" type="link" link="https://x.com/simonkovtyk" target="_blank">
       <Icon name="twitter-x" width={24} height={24} />
     </Button>
     <div class="flex justify-center items-center gap-4">
